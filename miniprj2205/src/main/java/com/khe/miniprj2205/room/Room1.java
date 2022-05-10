@@ -1,13 +1,6 @@
 package com.khe.miniprj2205.room;
 
 public class Room1 extends Room {
-	private void lighter() {
-		
-		
-	}
-	private int random() {
-		return 0;
-	}
 	
 	public void starttxt() {
 		System.out.println("빛 한 점 들지 않는 음침한 공간 속 한 가운데에 어떤 한 인영이 쓰러져 있다.\n"
@@ -30,9 +23,9 @@ public class Room1 extends Room {
 
 	public void tip1() {
 		System.out.println("\t\t[Tip] 이제 방향키로 움직일 수 있습니다!!");
-		System.out.println("\t  ================================================");
-		System.out.println("\t | w : 앞 | a : 왼쪽 | s : 뒤 | d : 오른쪽 | 0 : 종료 |");
-		System.out.println("\t  ================================================");
+		System.out.println("\t ★===============================================★");
+		System.out.println("\t ≡    w : ▲ | a : ◀ | s : ▼ | d : ▶ | 0 : 종료    ≡");
+		System.out.println("\t ★===============================================★");
 		System.out.println();
 		
 	}

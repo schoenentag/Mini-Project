@@ -14,7 +14,6 @@ public interface IChar {
 	
 	int choice();
 	
-	void have(); // 아이템을 소지할 수 있는 저장공간
 	
 	
 }
