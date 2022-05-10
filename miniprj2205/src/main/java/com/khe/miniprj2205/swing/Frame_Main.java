@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
-
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -73,7 +73,7 @@ public class Frame_Main {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		//이미지 출력
-		ImagePanel MainImgPanel = new ImagePanel(new ImageIcon("C:\\eclipse-workspace\\miniprj2205\\src\\main\\java\\image\\main_House800.jpg").getImage());
+		ImagePanel MainImgPanel = new ImagePanel(new ImageIcon("C:\\Project\\miniprj2205\\src\\main\\java\\image\\main_House800.jpg").getImage());
 		frame.add(MainImgPanel);
 		frame.pack(); //프레임 사이즈에 맞게 조정
 		
@@ -82,20 +82,27 @@ public class Frame_Main {
 		main_panel.setLayout(null);
 		
 		JButton btnStart = new JButton("START");
+		btnStart.setIcon(new ImageIcon("C:\\Project\\miniprj2205\\src\\main\\java\\image\\button150-50.jpg"));
+		btnStart.setBorderPainted(false); // 버튼 외곽선 테두리 없애기
 		btnStart.setFont(new Font("나눔스퀘어 Bold", Font.PLAIN, 15));
+		btnStart.setForeground(Color.WHITE);
 		btnStart.setBounds(100, 350, 100, 50);
 		main_panel.add(btnStart);
 		
 		btnStart.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// 다음 화면으로 넘어가는 기능 넣기
+				new Frame_Room1();
+				frame.setVisible(false);
 			}
 		});
 		
 		JButton btnExit = new JButton("EXIT");
 		btnExit.setFont(new Font("나눔스퀘어 Bold", Font.PLAIN, 15));
+		btnExit.setForeground(Color.WHITE);
 		btnExit.setBounds(100, 420, 100, 50);
+		btnExit.setIcon(new ImageIcon("C:\\Project\\miniprj2205\\src\\main\\java\\image\\button150-50.jpg"));
+		btnExit.setBorderPainted(false); // 버튼 외곽선 테두리 없애기
 		main_panel.add(btnExit);
 		// 버튼을 클릭하면 종료된다.
 		btnExit.addActionListener(new ActionListener() {
@@ -105,20 +112,7 @@ public class Frame_Main {
 			}
 		});
 		
-		
-//		JButton btnNewButton1 = new JButton(" 예 ");
-//		btnNewButton1.setFont(new Font("나눔스퀘어 Bold", Font.PLAIN, 15));
-//		btnNewButton1.setBounds(550, 510, 100, 30);
-//		panel.add(btnNewButton1);
-//		
-//		JButton btnNewButton2 = new JButton("아니오");
-//		btnNewButton2.setFont(new Font("나눔스퀘어 Bold", Font.PLAIN, 15));
-//		btnNewButton2.setBounds(650, 510, 100, 30);
-//		panel.add(btnNewButton2);
-		
-		//JPanel panel_1 = new JPanel();
-		//frame.getContentPane().add(panel_1);
-		//panel_1.setLayout(null);
+
 		
 	}
 }

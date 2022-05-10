@@ -1,8 +1,10 @@
+
 package com.khe.miniprj2205.swing;
 import java.awt.EventQueue;
 
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -10,6 +12,8 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JPanel;
 
+import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -17,6 +21,7 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 
 class ImagePanel extends JPanel{
+	
 	private Image img;
 	
 	public ImagePanel(Image img) {
@@ -32,6 +37,7 @@ class ImagePanel extends JPanel{
 
 public class Frame_Room1 {
 
+	private static final Color White = null;
 	private JFrame frame;
 
 	/**
@@ -61,6 +67,8 @@ public class Frame_Room1 {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		
+		//프레임 생성
 		frame = new JFrame();
 		frame.setTitle("The Cottage Escape");
 		frame.setBounds(100, 100, 800, 600);
@@ -69,7 +77,7 @@ public class Frame_Room1 {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		//이미지 출력
-		ImagePanel MainImgPanel = new ImagePanel(new ImageIcon("C:\\eclipse-workspace\\miniprj2205\\src\\main\\java\\image\\Room1800-1.jpg").getImage());
+		ImagePanel MainImgPanel = new ImagePanel(new ImageIcon("C:\\Project\\miniprj2205\\src\\main\\java\\image\\Room1800-1.jpg").getImage());
 		frame.add(MainImgPanel);
 		frame.pack(); //프레임 사이즈에 맞게 조정
 		
@@ -77,30 +85,61 @@ public class Frame_Room1 {
 		frame.getContentPane().add(main_panel);
 		main_panel.setLayout(null);
 		
+	
+		// 버튼생성해서 메인판넬에 넣음
 		JButton btnNewButton1 = new JButton("예");
 		btnNewButton1.setFont(new Font("나눔스퀘어 Bold", Font.PLAIN, 15));
 		btnNewButton1.setBounds(530, 510, 100, 30);
+		btnNewButton1.setForeground(Color.WHITE);
+		btnNewButton1.setIcon(new ImageIcon("C:\\Project\\miniprj2205\\src\\main\\java\\image\\button150-50.jpg"));
+		btnNewButton1.setBorderPainted(false); // 버튼 외곽선 테두리 없애기
 		main_panel.add(btnNewButton1);
 		
-		btnNewButton1.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// 다음 화면으로 넘어가는 기능 넣기
-			}
-		});
-		
+//		btnNewButton1.addActionListener(new ActionListener() {
+//			@Override
+//			public void actionPerformed(ActionEvent e) {
+//				// 다음 화면으로 넘어가는 기능 넣기
+//			}
+//		});
+		// 버튼 생성해서 메인판넬에 넣음
 		JButton btnNewButton2 = new JButton("아니오");
 		btnNewButton2.setFont(new Font("나눔스퀘어 Bold", Font.PLAIN, 15));
+		btnNewButton2.setForeground(Color.WHITE);
 		btnNewButton2.setBounds(650, 510, 100, 30);
+		btnNewButton2.setIcon(new ImageIcon("C:\\Project\\miniprj2205\\src\\main\\java\\image\\button150-50.jpg"));
+		btnNewButton2.setBorderPainted(false); // 버튼 외곽선 테두리 없애기
 		main_panel.add(btnNewButton2);
-		btnNewButton2.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				//
-			}
-		});
+//		btnNewButton2.addActionListener(new ActionListener() {
+//			@Override
+//			public void actionPerformed(ActionEvent e) {
+//				//
+//			}
+//		});
+		
+		
+//		frame = new JFrame();
+//		frame.setBounds(100, 100, 800, 600);
+//		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 
+//		//글자 출력을 위한 판넬
+//		JPanel txtpanel = new JPanel();
+//		txtpanel.setBounds(100, 319, 400, 150); // 판넬 위치 사이즈
+//		frame.getContentPane().add(txtpanel);
+//		txtpanel.setLayout(null);
+//		txtpanel.setVisible(true);
+//		frame.add(txtpanel);
+//		
+//		JLabel txtLabel = new JLabel("asdasdfasdfasdfasdfasddsafasdfsasdffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
+//		txtLabel.setOpaque(true);
+//		txtLabel.setBackground(Color.lightGray);
+//		txtLabel.setForeground(Color.RED);
+//		txtLabel.setFont(new Font("나눔스퀘어 Bold", Font.PLAIN, 15));
+//		txtpanel.add(txtLabel); 
+		
+		
+
+		
+		}
 	}
 
-}
