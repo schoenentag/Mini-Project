@@ -1,4 +1,4 @@
-package com.khe.miniprj2205.chr;
+package com.khe.miniprj2205.room;
 
 public interface IChar {
 	void w(); // 앞으로 가는 기능
