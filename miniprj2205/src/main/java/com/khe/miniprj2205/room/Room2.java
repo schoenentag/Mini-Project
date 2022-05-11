@@ -4,12 +4,12 @@ import java.util.Scanner;
 
 public class Room2 {
 	Scanner sc = new Scanner(System.in);
-	public static int starttxtcount = 0;
+	public static int starttxtcount2 = 0;
 	public static int room2clear = 0;
 	
 	public Room2() {
 		title2();
-		starttxt();
+		starttxt2();
 		hallreturn();
 	}
 	
@@ -22,9 +22,9 @@ public class Room2 {
 		System.out.println();
 	}
 
-	public void starttxt() {
-		if (starttxtcount == 0) {
-			System.out.println(starttxtcount);
+	public void starttxt2() {
+		if (starttxtcount2 == 0) {
+			System.out.println(starttxtcount2);
 		System.out.println(
 				 "여전히 어둡고 서늘하다.\n"
 				+ "다 무너져내려서 정확하게는 알 수 없지만 와인창고로 쓰여졌던 방인 것 같다.\n"
@@ -35,7 +35,7 @@ public class Room2 {
 				+ "\r\n"
 				);
 		room2clear = 1;
-		starttxtcount = 1;
+		starttxtcount2 = 1;
 		}else {
 			System.out.println("다 둘러보았습니다.");
 		}
@@ -59,8 +59,5 @@ public class Room2 {
 					System.out.println();
 					break;
 				}
-
-
-		
-	}
+	} // hallreturn 끝
 }

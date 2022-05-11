@@ -3,29 +3,24 @@ package com.khe.miniprj2205.room;
 import java.util.Scanner;
 
 public class Hallway {
-	private static Hallway singleton = new Hallway();
+	Scanner sc = new Scanner(System.in);
+	private static Hallway hall; // 싱글톤 클래스에 hall이라는 변수를 두고
 	
-	private Hallway() {
+	private Hallway() { //Hallway 호출시 자동 실행되는 메소드
 		title2();
-		starttxt();
+		hallstarttxt();
 		roomchoice();	
 	}
 	
-	static Hallway getInstance() {
-		return singleton;
+	public static Hallway getInstance() {
+		if (hall == null) { // hall값이 null인 경우에만 객체 생성해서 hall 객체가 한개만 만들어지도록 함.
+			hall = new Hallway();
+		}
+		return hall;
 	}
 	
-	public int hallwaystarttxtcount = 0;
-	Scanner sc = new Scanner(System.in);
+	public static int hallwaystarttxtcount = 0;
 	
-//	public  Hallway() {
-//		
-//		title2();
-//		if(starttxtcount == 0) {
-//			starttxt();
-//		}
-//			roomchoice();	
-//	}
 	
 	public void title2() {
 		System.out.println(
@@ -33,10 +28,10 @@ public class Hallway {
 				+ "\t\t ## Hallway. 복도 ##\n"
 				+ "\t\t ===============================\n");
 		System.out.println();
-		System.out.println(hallwaystarttxtcount);
 	}
 	
-	public void starttxt() {
+	public void hallstarttxt() {
+		if(hallwaystarttxtcount == 0) {
 		System.out.println(
 				 "\r\n"
 				+"....\n"
@@ -64,9 +59,9 @@ public class Hallway {
 				);
 		hallwaystarttxtcount++;
 	}
+	}
 	
 	private void roomchoice() {
-		
 		System.out.println();
 		System.out.println("\t ★============================================================★");
 		System.out.println("\t ≡ 1.ROOM1 | 2.ROOM2 | 3.ROOM3 | 4.ROOM4 | 5.ROOM5 | 6. ROOM6 ≡");
@@ -114,6 +109,28 @@ public class Hallway {
 			}
 		}//while문 끝
 		
-	}
+	}//roomchoice 끝
+	
+
+	//룸마다 쓰이는 hallreturn 메소드를 각각 생성하지 않고 싱글톤클래스의 메소드를 땡겨올 수 있는 방법은 없을까..?
+//	public void hallreturn() {
+//		System.out.println("\t\t >>> 복도로 돌아가시겠습니까?");
+//		System.out.println(
+//				  "\t\t ===============================\n"
+//				+ "\t\t ≡    1. 예     |    2. 아니오    ≡\n"
+//				+ "\t\t ===============================\n");
+//		System.out.println();
+//			System.out.println(">>>");
+//			int choice = Integer.parseInt(sc.nextLine());
+//				switch (choice) {
+//				case 1:
+//					Hallway hallway = Hallway.getInstance();
+//					break;
+//				default:
+//					System.out.println("\t>>> 아무 행동도 하지 않았습니다.");
+//					System.out.println();
+//					break;
+//				}
+//	} // hallreturn 끝
 
 }

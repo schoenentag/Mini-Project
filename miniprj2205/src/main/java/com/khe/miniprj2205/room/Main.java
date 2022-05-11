@@ -10,7 +10,7 @@ public class Main {
 	public Main() {
 		main();
 		Room1 room1 = new Room1();
-		room1.starttxt();
+		room1.starttxt1();
 		room1.tip1();
 		Char user = new Char();
 		user.move();

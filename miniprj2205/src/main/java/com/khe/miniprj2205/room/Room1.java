@@ -1,19 +1,19 @@
 package com.khe.miniprj2205.room;
 
 public class Room1  {
-	public static int starttxtcount = 0;
+	public static int starttxtcount1 = 0;
 	Item item = new Item();
 	final int mx = 100;
 	final int my = 100;
 	
 	public void Romm1() {
-		starttxt();
+		starttxt1();
 		tip1();
-		room1exit();
+		//room1exit();
 	}
 	
-	public void starttxt() {
-		if (starttxtcount == 0) {
+	public void starttxt1() {
+		if (starttxtcount1 == 0) {
 		System.out.println(
 				"\t\t===============================\n"
 				+"\t\t ## ROOM1. 다 무너져 내린 방 ##\n"
@@ -34,7 +34,7 @@ public class Room1  {
 				+ "이윽고 거칠어진 숨을 차분히 다듬으며 진정하려 노력하며, 일단 이곳을 파악하고 빠져나가기로 한다."
 				+ "\r\n"
 				);
-		starttxtcount++;
+		starttxtcount1++;
 		}
 	}
 	
@@ -45,19 +45,19 @@ public class Room1  {
 		System.out.println("\t ★===============================================★");
 		System.out.println();
 	}
-	public void room1exit() {
-		
-		try {
-			if (starttxtcount == 1 && item.mylight == 1 && item.myax == 1) {
-				System.out.println("방을 탈출 합니다.");
-				Hallway hallway = Hallway.getInstance();
-			} else{
-				System.out.println("더 둘러봅니다.");
-			}
-		} catch (Exception e) {
-			System.out.println("room1exit()에서 발생한 에러입니다.");
-		}
-		
-	}
+//	public void room1exit() {
+//		
+//		try {
+//			if (starttxtcount1 == 1 && item.mylight == 1 && item.myax == 1) {
+//				System.out.println("방을 탈출 합니다.");
+//				Hallway hallway = Hallway.getInstance();
+//			} else{
+//				System.out.println("더 둘러봅니다.");
+//			}
+//		} catch (Exception e) {
+//			System.out.println("room1exit()에서 발생한 에러입니다.");
+//		}
+//		
+//	}
 	
 }
