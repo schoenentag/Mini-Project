@@ -12,8 +12,11 @@ public class Main {
 		Room1 room1 = new Room1();
 		room1.starttxt1();
 		room1.tip1();
-		Char user = new Char();
+	Char user = new Char();
 		user.move();
+	}
+	public Main(int hp) {
+		restart();
 	}
 
 	public void main() {
@@ -85,6 +88,7 @@ public class Main {
 				switch (choice) {
 				case 1:
 					System.out.println("\t>>> 게임을 다시 시작합니다.");
+					new Main();
 					run = false;
 					System.out.println();
 					break;

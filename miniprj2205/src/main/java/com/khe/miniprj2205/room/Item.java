@@ -5,6 +5,8 @@ import java.util.Scanner;
 public class Item {
 	public int myax = 0; // 도끼를 습득하면 1로 바뀜
 	public int mylight = 0;
+	public int mynote = 0;
+	public int mybed= 0; // bed 둘러만 보면 1, 지하방까지보면 2
 	
 	public  Item() {  init(); }
 	
@@ -65,10 +67,37 @@ public class Item {
 		
 	}// light메소드 끝
 	
+	public void note() {
+		System.out.println();
+		System.out.println("낡은 3단 서랍장을 발견하였습니다.");
+		System.out.println("맨 윗 서랍 외에는 다 부서져 열어볼 수 없습니다.");
+		System.out.println("맨 윗 서랍을 열었습니다");
+		System.out.println();
+		System.out.println("....");
+		System.out.println("낡은 수첩과 볼펜이 하나 들어있습니다.");
+		System.out.println("수첩 안에는 드문드문 날짜와 간단한 메모가 기재되어있습니다.");
+		System.out.println("그리고 앞 장의 메모에는 취소선 혹은 체크 표시가 되어있습니다.");
+		System.out.println();
+		System.out.println("... 그 이외의 추가로 발견한 내용은 없습니다.");
+		mynote = mynote + 1;
+	}
+	public int mynote() {
+		return this.mynote;
+	}
+	
+	public void bed() {
+		System.out.println("낡은 침대를 발견하였습니다.");
+		System.out.println("침대 주변을 살펴봅니다.");
+		
+	}
+	
+	public int mybed() {
+		return this.mybed;
+	}
 	public void init() {
 		int myax = 0; 
 		int mylight = 0;
-		
+		int mynote = 0;
 	}
 
 }

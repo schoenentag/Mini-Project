@@ -3,12 +3,14 @@ package com.khe.miniprj2205.room;
 public class Room1  {
 	public static int starttxtcount1 = 0;
 	Item item = new Item();
+	Char user = new Char();
 	final int mx = 100;
 	final int my = 100;
 	
 	public void Romm1() {
 		starttxt1();
 		tip1();
+		//status();
 		//room1exit();
 	}
 	
@@ -45,6 +47,43 @@ public class Room1  {
 		System.out.println("\t ★===============================================★");
 		System.out.println();
 	}
+	
+	
+//	public void status() {
+//		//System.out.println("\t\t\t\t\t 기존 좌표값 【" + ux + ", " + uy + "】");
+//		//System.out.println("\t  ================================================");
+//
+//		if (user.ux == 60 && user.uy == 60) {
+//			item.light();
+//		}
+//		if (user.ux == 10 && user.uy == 30) {
+//			item.trash();
+//		}
+//		user.ux = user.x(user.ux);
+//		user.uy = user.y(user.uy);
+//		System.out.println("\t\t\t\t\t   좌표값 【" + user.ux + ", " + user.uy + "】");
+//		if (user.ux == 50 && user.uy == 90 && item.myax() == 0) {
+//			System.out.println("나가는 문을 발견하였습니다.");
+//			System.out.println("자물쇠로 잠겨져 있습니다.");
+//			System.out.println("자물쇠를 부슬 무언가를 찾아야할 것 같습니다.");
+//		}
+//
+//		if (user.ux == 50 && user.uy == 90 && item.myax() == 1 && item.mylight() == 1) {
+//			System.out.println("나가는 문을 발견하였습니다.");
+//			System.out.println("자물쇠로 잠겨져 있습니다.");
+//			System.out.println("획득한 도끼로 자물쇠를 부숩니다.");
+//			System.out.println("....");
+//			System.out.println("자물쇠가 부서졌습니다.");
+//			System.out.println("문을 열었습니다.");
+//			//clear1 = clear1 + 1;
+//			Hallway.getInstance().hallreturn();
+//			//return;
+//		}else if(user.ux == 50 && user.uy == 90 && item.myax() == 1 && item.mylight() == 0) {
+//			System.out.println("나가기 전 방을 조금 더 둘러봅니다.");
+//		}
+//	} //status() end
+		
+		
 //	public void room1exit() {
 //		
 //		try {

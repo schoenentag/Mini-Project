@@ -1,30 +1,37 @@
 package com.khe.miniprj2205.room;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
-import com.khe.miniprj2205.room.Hallway;
-import com.khe.miniprj2205.room.Item;
-import com.khe.miniprj2205.room.Main;
-import com.khe.miniprj2205.room.Room1;
 
 public class Char implements IChar {
 	Scanner sc = new Scanner(System.in);
+	
+	/*
+	 * private static Char user; // 싱글톤 클래스에 char이라는 변수를 두고
+	 * 
+	 * private Char() { //Char 호출시 자동 실행되는 메소드
+	 * 
+	 * }
+	 * 
+	 * public static Char getInstance() { if (user == null) { // hall값이 null인 경우에만
+	 * 객체 생성해서 hall 객체가 한개만 만들어지도록 함. user = new Char(); } return user; }
+	 */
+	
 	Item item = new Item();
 
 
-	public int hp = 100;
+	public static int hp = 100;
 	public int hit = 0;
-	public int clear1 = 0;
+	public static int clear1 = 0;
+	public static int clear5 = 0;
 	String move;
 
 	// 유저의 좌표 초기값
-	public int ux = 50;
+	public  int ux = 50;
 	public int uy = 80;
 
-	public static final int MIN = 0;
-	public static final int MAX = 100;
+	public final int MIN = 0;
+	public  final int MAX = 100;
 
 	public Char() { init(); }
 
@@ -53,11 +60,11 @@ public class Char implements IChar {
 		System.out.println("\t  ================================================");
 	}
 
+	boolean run = true;
 	public void move() {
 		
-		boolean run = true;
 		try {
-			while (clear1 == 0) {
+			while (run) {
 				System.out.println(">> ");
 				move = sc.nextLine();
 				switch (move) {
@@ -103,10 +110,11 @@ public class Char implements IChar {
 	public int hp(int hp) {
 		return hp;
 	}
+	
 
 	public int hit(int hit) {
 		this.hit = hit;
-		return this.hit;
+		return hit;
 	}
 
 	public void hpInfo(int hit) {
@@ -119,7 +127,7 @@ public class Char implements IChar {
 			System.out.println("\t  ================================================");
 			System.out.println("\t\t\t >>> GAME OVER!");
 			System.out.println("\t\t\t >>> 게임을 다시 시작하시겠습니까?");
-			new Main();
+			new Main(hp);
 		}
 
 	}
@@ -158,10 +166,11 @@ public class Char implements IChar {
 		}
 		return uy;
 	}
+	
 
 	public void status() {
-		//System.out.println("\t\t\t\t\t 기존 좌표값 【" + ux + ", " + uy + "】");
-		//System.out.println("\t  ================================================");
+		System.out.println("clear1 값은 : "+clear1+", clear5 값은 : "+clear5);
+		if(clear1 == 0) {
 
 		if (ux == 60 && uy == 60) {
 			item.light();
@@ -186,16 +195,46 @@ public class Char implements IChar {
 			System.out.println("자물쇠가 부서졌습니다.");
 			System.out.println("문을 열었습니다.");
 			clear1 = clear1 + 1;
-			Hallway hallway = Hallway.getInstance();
+			run = false;
+			Hallway.getInstance().hallreturn();
 			//return;
 		}else if(ux == 50 && uy == 90 && item.myax() == 1 && item.mylight() == 0) {
 			System.out.println("나가기 전 방을 조금 더 둘러봅니다.");
 		}
-	}
+		}else if(clear5 == 0) { // Room5 status
+			//=================================================
+			ux = x(ux);
+			uy = y(uy);
+			System.out.println("\t\t\t\t\t   좌표값 【" + ux + ", " + uy + "】");
+			
+			if (ux == 50 && uy == 90 && item.mynote() == 0 && item.mybed() == 0) {
+				System.out.println("나가기 전 방을 조금 더 둘러봅니다.");
+			}else if (ux == 50 && uy == 90 && item.mynote() == 1 && item.mybed() == 1) {
+				System.out.println("복도로 나가겠습니까?");
+				//복도로 돌아가는 메소드 호출
+				Hallway.getInstance().hallreturn();
+			}else if (ux == 50 && uy == 90 && item.mynote() == 1 && item.mybed() == 2) {
+				System.out.println("복도로 나가겠습니까?");
+				//복도로 돌아가는 메소드 호출
+				Hallway.getInstance().hallreturn();
+			}
 
-	public void init() {
-		int hp = 100;
-		int hit = 0;
+			if (ux == 10 && uy == 30 && item.mynote() == 0) {
+				item.note();
+				//clear = clear5 + 1;
+				//run = false;
+				//return;
+			}
+			if(ux == 10 && uy == 10 && item.mynote() == 0 && item.mybed() == 0) {// 침대 좌표 넣기
+				item.mybed();
+			}
+		}
+		
+	} //status() end
+
+	public void init() { //초기화 메서드
+		hp = 100;
+		hit = 0;
 		int totalhp;
 
 		int ux = 50;

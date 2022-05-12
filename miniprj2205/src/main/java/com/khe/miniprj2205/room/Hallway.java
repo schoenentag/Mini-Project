@@ -7,9 +7,15 @@ public class Hallway {
 	private static Hallway hall; // 싱글톤 클래스에 hall이라는 변수를 두고
 	
 	private Hallway() { //Hallway 호출시 자동 실행되는 메소드
+//		title2();
+//		hallstarttxt();
+//		roomchoice();
+	}
+	
+	public void hallwayCall() {
 		title2();
 		hallstarttxt();
-		roomchoice();	
+		roomchoice();
 	}
 	
 	public static Hallway getInstance() {
@@ -61,7 +67,7 @@ public class Hallway {
 	}
 	}
 	
-	private void roomchoice() {
+	public void roomchoice() {
 		System.out.println();
 		System.out.println("\t ★============================================================★");
 		System.out.println("\t ≡ 1.ROOM1 | 2.ROOM2 | 3.ROOM3 | 4.ROOM4 | 5.ROOM5 | 6. ROOM6 ≡");
@@ -85,14 +91,15 @@ public class Hallway {
 					new Room2();
 					break;
 				case 3:
-					System.out.println();
+					new Room3();
 					run = false;
 					break;
 				case 4:
+					new Room4();
 					run = false;
 					break;
 				case 5:
-					System.out.println();
+					new Room5();
 					run = false;
 					break;
 				case 6:
@@ -113,24 +120,31 @@ public class Hallway {
 	
 
 	//룸마다 쓰이는 hallreturn 메소드를 각각 생성하지 않고 싱글톤클래스의 메소드를 땡겨올 수 있는 방법은 없을까..?
-//	public void hallreturn() {
-//		System.out.println("\t\t >>> 복도로 돌아가시겠습니까?");
-//		System.out.println(
-//				  "\t\t ===============================\n"
-//				+ "\t\t ≡    1. 예     |    2. 아니오    ≡\n"
-//				+ "\t\t ===============================\n");
-//		System.out.println();
-//			System.out.println(">>>");
-//			int choice = Integer.parseInt(sc.nextLine());
-//				switch (choice) {
-//				case 1:
-//					Hallway hallway = Hallway.getInstance();
-//					break;
-//				default:
-//					System.out.println("\t>>> 아무 행동도 하지 않았습니다.");
-//					System.out.println();
-//					break;
-//				}
-//	} // hallreturn 끝
+	public void hallreturn() {
+		boolean run = true;
+		while(run) {
+		System.out.println("\t\t >>> 복도로 돌아가시겠습니까?");
+		System.out.println(
+				  "\t\t ===============================\n"
+				+ "\t\t ≡    1. 예     |    2. 아니오    ≡\n"
+				+ "\t\t ===============================\n");
+			System.out.println(">>>");
+			try {
+			int choice = Integer.parseInt(sc.nextLine());
+				switch (choice) {
+				case 1:
+					System.out.println("복도로 돌아갑니다.");
+					hallwayCall();
+					run = false;
+					break;
+					default:
+						System.out.println("더 둘러보았으나 특별한 점은 없다.");
+						break;
+				}}catch (Exception e) {
+					System.out.println(">>>아무 행동도 하지 않았습니다.");
+				
+
+				}}
+	} // hallreturn 끝
 
 }
