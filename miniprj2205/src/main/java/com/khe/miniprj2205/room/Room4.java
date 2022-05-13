@@ -23,7 +23,7 @@ public class Room4 {
 	}
 
 	public void starttxt4() {
-		if (starttxtcount4 == 0 && Item.mybed() == 0 ) {
+		if ((starttxtcount4 == 0 && Item.mybed() == 0) || (starttxtcount4 == 0 && Item.mybed() == 1)) {
 			System.out.println(
 					 "부서진 문짝을 밀어 화장실에 들어오자마자 퀴퀴한 곰팡이 냄새와 알 수 없는 냄새가 코를 찌른다.\r\n"
 					+ "속이 메스꺼워오고 당장 탈출하고 싶지만 참고 좀 더 조사를 하기로 한다.\r\n"
@@ -41,7 +41,8 @@ public class Room4 {
 					);
 			starttxtcount4 = 1;
 			Hallway.getInstance().hallreturn();
-			}else {
+			}
+		if (starttxtcount4 == 1 && Item.mybed() == 0 ) {
 				System.out.println("다 둘러보았습니다.");
 				Hallway.getInstance().hallreturn();
 			}
@@ -76,6 +77,7 @@ public class Room4 {
 			Item.mykey = 1;
 			Hallway.getInstance().hallreturn();
 		}
+	
 	} // starttxt4 end
 	//만약 침실에서 아이템을 습득하면... 추가 정보 공개
 	

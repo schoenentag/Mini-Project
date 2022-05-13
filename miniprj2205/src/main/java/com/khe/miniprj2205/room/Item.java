@@ -21,8 +21,7 @@ public class Item {
 	public static int key = 0;
 	public static int mykey = 0;
 	
-	
-//	public  Item() {  init(); }
+	public  Item(int hit){  init(); }
 	
 
 	public void trash() {
@@ -39,6 +38,7 @@ public class Item {
 	}
 	// 도끼 습득
 	public void ax() {
+		if(myax==0) {
 		try {
 			Scanner sc = new Scanner(System.in);
 			System.out.println("\t  ================================================");
@@ -70,6 +70,7 @@ public class Item {
 		} catch (Exception e) {
 			System.out.println("\t\t >>> 아무것도 하지 않습니다.");
 		}
+		}else {System.out.println("아이템을 이미 습득하였습니다.");}
 	}
 
 	public void light() {
@@ -123,7 +124,7 @@ public class Item {
 				if (num == random) {
 					System.out.println("곰팡이가 가득 핀 매트리스를 들어보았습니다.");
 					System.out.println("나무 프레임 창살 사이로 무언가가 보입니다.");
-					System.out.println("");
+					System.out.println();
 					System.out.println("랜턴으로 사이를 자세히 비추어 봅니다.");
 					System.out.println();
 					System.out.println("...");
@@ -133,6 +134,7 @@ public class Item {
 					System.out.println();
 					System.out.println("...");
 					System.out.println("일단 더 이상 시간을 지체하지 않고 나갈 방법을 구상해봅니다.");
+					System.out.println();
 					mybed = 1;
 					run = false;
 				} else {
@@ -159,10 +161,12 @@ public class Item {
 		return mybed;
 	}
 	public void init() {
-		myax = 0; 
-		mylight = 0;
-		mynote = 0;
-		mybed = 0; 
+		 myax = 0; // 도끼를 습득하면 1로 바뀜
+		 mylight = 0;
+		 mynote = 0;
+		 mybed= 0; // bed 둘러만 보면 1, key 습득하면 1, 지하방 보면 2
+		key = 0;
+		mykey = 0;
 	}
 
 	public void key() { }

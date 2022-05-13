@@ -2,57 +2,57 @@ package com.khe.miniprj2205.room;
 
 import java.util.Scanner;
 
-public class Char implements IChar {
-	Scanner sc = new Scanner(System.in);
+public class Char {
 	
-//	 private static Char user; // 싱글톤 클래스에 char이라는 변수를 두고
-//	 
-//	 private Char() {} //Char 호출시 자동 실행되는 메소드
-//	 
-//	 public static Char getInstance() {
-//		 if (user == null) { 
-//	 user = new Char(); 
-//	 } return user;
-//	 }
+	
+	 private static Char user; // 싱글톤 클래스에 char이라는 변수를 두고
+	 
+	 Char() {
+	//	 move();
+	 } //Char 호출시 자동 실행되는 메소드
+	 
+	 public static Char getInstance() {
+		 if (user == null) { 
+	 user = new Char(); 
+	 } return user;
+	 }
 
 	// Item item = new Item();
 
 	public static int hp = 100;
-	public int hit = 0;
+	public static int hit = 0;
 	public static int clear1 = 0;
 	public static int clear5 = 0;
-	String move;
+	
 
 	// 유저의 좌표 초기값
-	public int ux = 50;
-	public int uy = 80;
+	public static int ux = 50;
+	public static int uy = 80;
 
 	public final int MIN = 0;
 	public final int MAX = 100;
 
-	//public Char() {init();}
+	public Char(int hit){
+		init();
+		}
 
-	@Override
-	public void w() {
+	public static void w() {
 		System.out.println("\t\t >>> 앞으로 1칸 이동하였습니다. >>>");
 		System.out.println("\t  ================================================");
 	}
 
-	@Override
-	public void a() {
+	public static void a() {
 		System.out.println("\t\t >>> 왼쪽으로 1칸 이동하였습니다. >>>");
 		System.out.println("\t  ================================================");
 	}
 
-	@Override
-	public void s() {
+	public static void s() {
 		System.out.println("\t\t >>> 뒤로 1칸 이동하였습니다. >>> ");
 		System.out.println("\t  ================================================");
 
 	}
 
-	@Override
-	public void d() {
+	public static void d() {
 		System.out.println("\t\t >>> 오른쪽으로 1칸 이동하였습니다. >>> ");
 		System.out.println("\t  ================================================");
 	}
@@ -60,6 +60,8 @@ public class Char implements IChar {
 
 	public void move() {
 		boolean run = true;
+		Scanner sc = new Scanner(System.in);
+		String move;
 
 		try {
 			while (run) {
@@ -104,7 +106,6 @@ public class Char implements IChar {
 
 	}
 
-	@Override
 	public int hp(int hp) {
 		return hp;
 	}
@@ -119,7 +120,7 @@ public class Char implements IChar {
 		if (hp > 0 && hit > 0) {
 			System.out.println("\t\t\t      >>> 당신의 체력이 " + hit + "만큼 깎였습니다. ");
 			System.out.println("\t  ================================================");
-		} else if (hp == 0) {
+		} else if (hp <= 0) {
 			System.out.println("\t\t\t >>> 당신은 사망하였습니다.");
 			System.out.println("\t  ================================================");
 			System.out.println("\t\t\t >>> GAME OVER!");
@@ -129,7 +130,7 @@ public class Char implements IChar {
 
 	}
 
-	public int x(int ux) {
+	public  int x(int ux) {
 		if (ux < MIN) {
 			System.out.println("벽에 부딪혔습니다.");
 			hit = hit + 10;
@@ -191,9 +192,9 @@ public class Char implements IChar {
 				System.out.println("자물쇠가 부서졌습니다.");
 				System.out.println("문을 열었습니다.");
 				clear1 = clear1 + 1;
-				run = false;
+				//run = false;
 				Hallway.getInstance().hallreturn();
-				// return;
+				 return;
 			} else if (ux == 50 && uy == 90 && Item.getInstance().myax() == 1 && Item.getInstance().mylight() == 0) {
 				System.out.println("나가기 전 방을 조금 더 둘러봅니다.");
 			}
@@ -227,6 +228,8 @@ public class Char implements IChar {
 			}
 			if (ux == 10 && uy == 10 && Item.mykey == 1) {
 				System.out.println();
+				Extra extra = new Extra();
+				
 			}
 
 		}
@@ -242,8 +245,8 @@ public class Char implements IChar {
 		int uy = 80;
 	}
 
-	public void xy00() {
-		int ux = 10;
-		int uy = 10;
-	}
+//	public void xy00() {
+//		int ux = 10;
+//		int uy = 10;
+//	}
 }

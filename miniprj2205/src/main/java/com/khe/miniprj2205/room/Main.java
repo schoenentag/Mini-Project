@@ -12,8 +12,8 @@ public class Main {
 		Room1 room1 = new Room1();
 		room1.starttxt1();
 		room1.tip1();
-	Char user = new Char();
-		user.move();
+	//Char user = new Char();
+		Char.getInstance().move();
 	}
 	public Main(int hp) {
 		restart();
