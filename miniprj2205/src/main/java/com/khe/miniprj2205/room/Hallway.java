@@ -70,7 +70,7 @@ public class Hallway {
 	public void roomchoice() {
 		System.out.println();
 		System.out.println("\t ★============================================================★");
-		System.out.println("\t ≡ 1.ROOM1 | 2.ROOM2 | 3.ROOM3 | 4.ROOM4 | 5.ROOM5 | 6. ROOM6 ≡");
+		System.out.println("\t ≡ 1.ROOM1 | 2.ROOM2 | 3.ROOM3 | 4.ROOM4 | 5.ROOM5 | 6. ????  ≡");
 		System.out.println("\t ★============================================================★");
 		System.out.println();
 		

@@ -3,12 +3,26 @@ package com.khe.miniprj2205.room;
 import java.util.Scanner;
 
 public class Item {
-	public int myax = 0; // 도끼를 습득하면 1로 바뀜
-	public int mylight = 0;
-	public int mynote = 0;
-	public int mybed= 0; // bed 둘러만 보면 1, 지하방까지보면 2
 	
-	public  Item() {  init(); }
+	private static Item item; // 싱글톤 클래스에 item이라는 변수를 만듦
+	
+	private Item() {} // Hallway 호출 시 자동으로 실행되는 메소드
+	
+	public static Item getInstance() {
+		if (item == null) {
+			item = new Item();
+		}
+		return item;
+	}
+	public static int myax = 0; // 도끼를 습득하면 1로 바뀜
+	public static int mylight = 0;
+	public static int mynote = 0;
+	public static int mybed= 0; // bed 둘러만 보면 1, key 습득하면 1, 지하방 보면 2
+	public static int key = 0;
+	public static int mykey = 0;
+	
+	
+//	public  Item() {  init(); }
 	
 
 	public void trash() {
@@ -18,10 +32,10 @@ public class Item {
 		ax();
 	}
 	public int myax() {
-		return this.myax;
+		return myax;
 	}
 	public int mylight() {
-		return this.mylight;
+		return mylight;
 	}
 	// 도끼 습득
 	public void ax() {
@@ -82,22 +96,78 @@ public class Item {
 		mynote = mynote + 1;
 	}
 	public int mynote() {
-		return this.mynote;
+		return mynote;
 	}
 	
 	public void bed() {
 		System.out.println("낡은 침대를 발견하였습니다.");
 		System.out.println("침대 주변을 살펴봅니다.");
-		
+		if(mybed == 0) {
+		try {
+			Scanner sc = new Scanner(System.in);
+			System.out.println("\t  ================================================");
+			System.out.println("\t |          [Tip] 숫자키를 눌러서 행동하십시오.           |");
+			System.out.println("\t |     ※ 숫자키 이외의 키는 아무 행동도 하지 않습니다. ※      |");
+			System.out.println("\t  ================================================");
+			System.out.println(">> ");
+			System.out.println();
+			int random = (int) (Math.random() * 4) + 2;
+			System.out.println("랜덤값 : " + random);
+			boolean run = true;
+
+			while (run) {
+				System.out.println("==============");
+				System.out.println("|>>> 숫자키 입력 |");
+				System.out.println("==============");
+				int num = (int) sc.nextInt();
+				if (num == random) {
+					System.out.println("곰팡이가 가득 핀 매트리스를 들어보았습니다.");
+					System.out.println("나무 프레임 창살 사이로 무언가가 보입니다.");
+					System.out.println("");
+					System.out.println("랜턴으로 사이를 자세히 비추어 봅니다.");
+					System.out.println();
+					System.out.println("...");
+					System.out.println("바닥으로 위장된 문을 발견하였습니다!");
+					System.out.println("문을 열어보려 시도 해 보았으나...");
+					System.out.println("자물쇠로 문이 잠겨있어서 열리지 않습니다.");
+					System.out.println();
+					System.out.println("...");
+					System.out.println("일단 더 이상 시간을 지체하지 않고 나갈 방법을 구상해봅니다.");
+					mybed = 1;
+					run = false;
+				} else {
+					System.out.println();
+					System.out.println("침대 주변을 더 샅샅이 살펴봅니다.");
+					System.out.println("...");
+					System.out.println();
+					continue;
+				}
+			}
+		} catch (Exception e) {
+			System.out.println("\t\t >>> 아무것도 하지 않습니다.");
+		}
+		}//if mybed=0 끝
+		else if(mybed ==1) {
+			System.out.println("주변을 더 둘러봤으나... ");
+			System.out.println("아직 문을 열 방법을 찾지 못했습니다.");
+			System.out.println();
+		}
+	
 	}
 	
-	public int mybed() {
-		return this.mybed;
+	public static int mybed() {
+		return mybed;
 	}
 	public void init() {
-		int myax = 0; 
-		int mylight = 0;
-		int mynote = 0;
+		myax = 0; 
+		mylight = 0;
+		mynote = 0;
+		mybed = 0; 
 	}
 
+	public void key() { }
+	
+	public int mykey() {
+		return mykey;
+	}
 }
