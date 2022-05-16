@@ -65,7 +65,7 @@
           <configuration>
           <archive>
           <manifest>
-          <mainClass>com.khe.maniprj2205.App</mainClass>
+          <mainClass>com.khe.miniprj2205.App</mainClass>
           </manifest>
           </archive>
           </configuration>

@@ -15,15 +15,17 @@ public class Room3 {
 	}
 
 	public void title3() {
-		System.out.println(
-				"\t\t ===============================\n" 
-			  + "\t\t ## ROOM3. 거실 ##\n"
-			  + "\t\t ===============================\n");
+		System.out.println();
+		System.out.println("\t\t====================================");
+		System.out.println("\t\t ## ROOM3. 거실 ##");
+		System.out.println("\t\t====================================");
 		System.out.println();
 	}
 
 	public void starttxt3() {
-			System.out.println("추측컨대 거실이었던 곳으로 보인다.");
+		System.out.println();
+		System.out.println("추측컨대 거실이었던 곳으로 보인다.");
+		System.out.println();
 	} //starttxt3 end
 	
 	private void roomchoice() {
@@ -32,9 +34,9 @@ public class Room3 {
 		boolean run = true;
 		while (run) {
 				System.out.println();
-				System.out.println("\t ★============================================================★");
-				System.out.println("\t ≡   1. 낡은 소파   |   2. 벽난로   |   3. 헌팅트로피   |   4. 그 외   ≡");
-				System.out.println("\t ★============================================================★");
+				System.out.println("\t ====================================================================");
+				System.out.println("\t    1. 낡은 소파   |   2. 벽난로   |   3. 헌팅트로피   |   4. 그 외   ");
+				System.out.println("\t ====================================================================");
 				System.out.println();
 			System.out.println(">>>");
 			try {
@@ -69,6 +71,7 @@ public class Room3 {
 					System.out.println("글자가 희미해서 잘 보이지 않는다.");
 					System.out.println("하지만 이것이 뭔지 파악할 필요가 있어보인다.");
 					System.out.println(">>> 당신이 떠올린 것은... ");
+					System.out.println();
 					try {
 						boolean run2 = true;
 					while(run2) {
@@ -111,7 +114,8 @@ public class Room3 {
 			}
 		}//while문 끝
 		}else{
-			System.out.println("다 둘러보았습니다.");
+			System.out.println("\t>>>거실을 다 둘러보았습니다.");
+			System.out.println();
 		}
 		
 	}//roomchoice 끝
@@ -131,11 +135,13 @@ public class Room3 {
 			System.out.println("부엌은 전체적으로 알수없는 얼룩들과 잔해물들로 지저분 했으며 별 다른 특이점은 발견하지 못 했다.");
 			System.out.println("다 둘러본 것 같다.");
 			System.out.println("복도로 돌아간다.");
+			System.out.println();
 			kitchencount++;
 			Hallway.getInstance().hallreturn();
 			
 		}else {
-			System.out.println("다 둘러보았습니다.");
+			System.out.println("\t 주방을 다 둘러보았습니다.");
+			System.out.println();
 			Hallway.getInstance().hallreturn();
 			}
 		

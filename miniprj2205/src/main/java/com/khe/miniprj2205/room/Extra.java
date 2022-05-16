@@ -27,6 +27,7 @@ import java.util.Scanner;
 			System.out.println();
 			System.out.println("어둠에 뒤덮인 경사진 계단을 조심스레 밟으며 아래로 내려갔다.");
 			System.out.println();
+			System.out.println();
 			System.out.println("...");
 			System.out.println("......");
 			System.out.println("긴장을 늦추지 않은 채 계속 지하로 걸음을 옮겼다.");
@@ -37,6 +38,7 @@ import java.util.Scanner;
 			System.out.println("사용감은 있어 보이지만 무언가가 놓여있거나 하지 않다.");
 			System.out.println("이 곳이 일반적인 용도로 사용되지는 않았을 것 같다는 생각이 들었다.");
 			System.out.println();
+			System.out.println();
 			System.out.println("...");
 			System.out.println("적당히 살펴보다보니 안쪽 깊숙한 곳에서 문이 발견했다.");
 			System.out.println("철문으로 되어있는 문이었는데, 잠겨져 있었지만");
@@ -46,7 +48,8 @@ import java.util.Scanner;
 			System.out.println();
 			System.out.println("심장이 거세게 뛰며 밖으로 나갈 수 있다는 희망이 생겼다.");
 			System.out.println("녹이 슨 열쇠들을 하나 씩 꽂아 넣어보며 맞는 열쇠를 찾아본다.");
-			Item.mykey = 2;
+			System.out.println();
+			Item.mykey = 3;
 		}
 		void keys() {
 			System.out.println();
@@ -60,11 +63,12 @@ import java.util.Scanner;
 			
 			boolean run = true;
 			while(run) {
+			System.out.println();
 			System.out.println("\t\t >>> 복도를 통해 밖으로 나가시겠습니까?");
 			System.out.println(
-					  "\t\t ===============================\n"
-					+ "\t\t ≡    1. 예     |    2. 아니오    ≡\n"
-					+ "\t\t ===============================\n");
+					  "\t\t ================================\n"
+					+ "\t\t     1. 예     |    2. 아니오    \n"
+					+ "\t\t ================================\n");
 				System.out.println(">>>");
 				try {
 				int choice = Integer.parseInt(sc.nextLine());
@@ -91,9 +95,11 @@ import java.util.Scanner;
 						System.out.println("암담함에 아무런 행동없이 무방비한 상태로 있을 때였다.");
 						System.out.println();
 						System.out.println("갑자기 등 뒤에서 인기척이 느껴졌다.");
+						System.out.println();
 						System.out.println("놀라 뒤를 돌아보는 순간...");
 						System.out.println("......");
 						System.out.println("...");
+						System.out.println();
 						System.out.println();
 						
 						Char.getInstance().hpInfo(Char.getInstance().hit(110));
@@ -101,16 +107,18 @@ import java.util.Scanner;
 						run = false;
 						break;
 					case 2:
+						System.out.println();
 						System.out.println("계단을 올라가 다시 복도로 돌아갑니다.");
 						Hallway.getInstance().roomchoice();
 						run = false;
 						break;
 					default:
+						System.out.println();
 					    System.out.println("지하 공간을 더 둘러보았으나 특별한 점은 없습니다.");
+					    System.out.println();
 					    break;
 					}}catch (Exception e) {
 						System.out.println(">>>아무 행동도 하지 않았습니다.");
-					
 
 					}}
 			

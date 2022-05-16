@@ -6,7 +6,7 @@ public class Item {
 	
 	private static Item item; // 싱글톤 클래스에 item이라는 변수를 만듦
 	
-	private Item() {} // Hallway 호출 시 자동으로 실행되는 메소드
+	private Item() {} // Item 호출 시 자동으로 실행되는 메소드
 	
 	public static Item getInstance() {
 		if (item == null) {
@@ -41,29 +41,36 @@ public class Item {
 		if(myax==0) {
 		try {
 			Scanner sc = new Scanner(System.in);
-			System.out.println("\t  ================================================");
-			System.out.println("\t |          [Tip] 숫자키를 눌러서 행동하십시오.           |");
-			System.out.println("\t |     ※ 숫자키 이외의 키는 아무 행동도 하지 않습니다. ※      |");
-			System.out.println("\t  ================================================");
+			System.out.println();
+			System.out.println("\t  ========================================================");
+			System.out.println("\t           [Tip] 숫자키를 눌러서 행동하십시오.           ");
+			System.out.println("\t      ※ 숫자키 이외의 키는 아무 행동도 하지 않습니다. ※      ");
+			System.out.println("\t  ========================================================");
 			System.out.println(">> ");
 			System.out.println();
 			int random = (int) (Math.random() * 6) + 3;
-			System.out.println("랜덤값 : " + random);
+			//System.out.println("랜덤값 : " + random);
 			boolean run = true;
 
 			while (run) {
-				System.out.println("==============");
-				System.out.println("|>>> 숫자키 입력 |");
-				System.out.println("==============");
+				System.out.println();
+				System.out.println("=================");
+				System.out.println(">>> 숫자키 입력 ");
+				System.out.println("=================");
+				System.out.println();
 				int num = (int) sc.nextInt();
 				if (num == random) {
+					System.out.println();
 					System.out.println("건축 부자재 폐기물 더미 사이에서 도끼를 발견했습니다.");
 					System.out.println("도끼를 습득했습니다.");
+					System.out.println();
 					myax = 1;
 					run = false;
 				} else {
+					System.out.println();
 					System.out.println("폐기물 더미 일부를 옆으로 치웁니다.");
 					System.out.println("폐기물 더미를 파해쳐 봅니다.");
+					System.out.println();
 					continue;
 				}
 			}
@@ -75,9 +82,11 @@ public class Item {
 
 	public void light() {
 		if(mylight == 0) {
+		System.out.println();
 		System.out.println("뜯겨져 나간 나무바닥 틈 사이에 랜턴이 있습니다.");
 		System.out.println("랜턴을 습득하여 사용합니다.");
 		System.out.println("주변이 조금 환해집니다.");
+		System.out.println();
 		mylight =1;}
 		
 	}// light메소드 끝
@@ -94,6 +103,7 @@ public class Item {
 		System.out.println("그리고 앞 장의 메모에는 취소선 혹은 체크 표시가 되어있습니다.");
 		System.out.println();
 		System.out.println("... 그 이외의 추가로 발견한 내용은 없습니다.");
+		System.out.println();
 		mynote = mynote + 1;
 	}
 	public int mynote() {
@@ -101,27 +111,33 @@ public class Item {
 	}
 	
 	public void bed() {
+		System.out.println();
 		System.out.println("낡은 침대를 발견하였습니다.");
 		System.out.println("침대 주변을 살펴봅니다.");
+		System.out.println();
 		if(mybed == 0) {
 		try {
 			Scanner sc = new Scanner(System.in);
-			System.out.println("\t  ================================================");
-			System.out.println("\t |          [Tip] 숫자키를 눌러서 행동하십시오.           |");
-			System.out.println("\t |     ※ 숫자키 이외의 키는 아무 행동도 하지 않습니다. ※      |");
-			System.out.println("\t  ================================================");
+			System.out.println();
+			System.out.println("\t  =====================================================");
+			System.out.println("\t           [Tip] 숫자키를 눌러서 행동하십시오.           ");
+			System.out.println("\t      ※ 숫자키 이외의 키는 아무 행동도 하지 않습니다. ※      ");
+			System.out.println("\t  =====================================================");
 			System.out.println(">> ");
 			System.out.println();
-			int random = (int) (Math.random() * 4) + 2;
-			System.out.println("랜덤값 : " + random);
+			int random = (int) (Math.random() * 4) + 3;
+			//System.out.println("랜덤값 : " + random);
 			boolean run = true;
 
 			while (run) {
-				System.out.println("==============");
-				System.out.println("|>>> 숫자키 입력 |");
-				System.out.println("==============");
+				System.out.println();
+				System.out.println("=================");
+				System.out.println(">>> 숫자키 입력 ");
+				System.out.println("=================");
+				System.out.println();
 				int num = (int) sc.nextInt();
 				if (num == random) {
+					System.out.println();
 					System.out.println("곰팡이가 가득 핀 매트리스를 들어보았습니다.");
 					System.out.println("나무 프레임 창살 사이로 무언가가 보입니다.");
 					System.out.println();

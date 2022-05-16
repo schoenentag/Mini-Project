@@ -7,15 +7,17 @@ public class Room6 {
 	
 	public Room6() {
 		title6();
+		txt5();
+		ending();
 
 	}
 
 	public void title6() {
-		System.out.println(
-				"\t\t ===============================\n"
-			  + "\t\t ## ROOM6. ??? ##\n"
-			  + "\t\t ===============================\n");
-		System.out.println();
+				System.out.println();
+				System.out.println("\t\t====================================");
+				System.out.println("\t\t ## ROOM6. ??? ##");
+				System.out.println("\t\t====================================");
+				System.out.println();
 	}
 	public void txt5() {
 		System.out.println();
@@ -53,68 +55,80 @@ public class Room6 {
 		System.out.println("처음에 보았을때는 단순히 창문이라고 생각했었지만...");
 		System.out.println("창문위치나 크기가 이상했다.");
 		System.out.println("마치 한 사람이 드나들 수 있을 정도의 사이즈였다.");
+		System.out.println();
 	}
 	public void ending() {
 		boolean run = true;
 		while(run) {
+		System.out.println();
 		System.out.println("\t\t >>> 창문을 조사해보시겠습니까?");
 		System.out.println(
 				  "\t\t ===============================\n"
-				+ "\t\t ≡    1. 예     |    2. 아니오    ≡\n"
+				+ "\t\t     1. 예     |    2. 아니오    \n"
 				+ "\t\t ===============================\n");
-		System.out.println("HP | " + Char.hp);
+		System.out.println("\t\tHP | " + Char.hp);
 			System.out.println(">>>");
-			if(Char.hp-50 <= 0) {
-				Char.getInstance().hpInfo(Char.getInstance().hit(50));
-				System.out.println("당신은 몸을 일으켜 보려고 했으나...");
-				System.out.println("누적된 피로와 두통으로 ");
-			}
+			
 			try {
 			int choice = Integer.parseInt(sc.nextLine());
 				switch (choice) {
 				case 1:
+					if(Char.hp-50 <= 0) {
+						System.out.println();
+						System.out.println("창문을 조사해보기로 마음먹고...");
+						System.out.println("당신은 몸을 일으켜 보려고 했으나...");
+						System.out.println("누적된 피로와 지속적으로 발생했던 출혈로 인해 빈혈을 느낀다. ");
+						System.out.println();
+						System.out.println("결국 몸을 가누지 못 해 결국 쓰러진다.");
+						System.out.println("다친 머리가 고르지 못한 바닥에 처박혀 결국...");
+						System.out.println("...");
+						System.out.println();
+						
+						Char.getInstance().hpInfo(Char.getInstance().hit(50));
+						}else if(Char.hp-50 > 0)	{
+							System.out.println();
+							System.out.println("창문을 조사해보고자 당신은 몸을 일으키려 했다.");
+							System.out.println("하지만 누적된 피로와 깨질듯한 두통으로 몸을 일으키기가 쉽지 않았다.");
+							Char.getInstance().hpInfo(Char.getInstance().hit(50));
+							System.out.println();
+							System.out.println("...");
+							System.out.println("잠시 휴식을 취한 후 조심스럽게 몸을 일으켜 세웠다.");
+							System.out.println();
+							System.out.println("벽면의 창문을 자세히 조사해보니...");
+							System.out.println("창문으로 위장된 문이 맞았다.");
+							System.out.println();
+							System.out.println("생각보다 문은 쉽게 열렸으며...");
+							System.out.println("알 수 없는 이곳을 무사히 빠져나올 수 있게 되었다.");
+							System.out.println();
+							System.out.println("인적이 드문 숲속의 어느 곳이었지만");
+							System.out.println("조금씩 동이 트는 덕분에 숲 속의 어떤 표식을 발견할 수 있었다.");
+							System.out.println("표식이 있는 나무를 따라 걸으니 무사히 조그마한 마을을 발견할 수 있게 되었으며");
+							System.out.println("드디어 그 끔찍한 지옥에서 탈출을 했다고 안심 할 수 있게 되었다.");
+							System.out.println();
+							System.out.println();
+							new Main("ending");
+						}
 					
-					System.out.println();
-					System.out.println("");
-					System.out.println("처음에는 긴장되어 조심스럽게 움직이던 발걸음이 점점 빨라져 결국 뛰다시피 걸음을 옮겼다.");
-					System.out.println();
-					System.out.println("...");
-					System.out.println("......");
-					System.out.println("마침내 또다른 문이 보이고 어깨를 짖누르고 있던 압박감만큼 무거운 철문을 밀어젖혔다.");
-					System.out.println();
-					System.out.println();
-					System.out.println("바람결에 흔들려 부딪히는 나무잎들의 소리와 빽빽하게 우거진 숲이 보였다.");
-					System.out.println("인공적인 불빛 한 점 보이지 않았다.");
-					System.out.println("도시와 상당히 떨어져 격리가 된 곳임은 분명하다.");
-					System.out.println();
-					System.out.println("여기가 어디인지, 이곳에는 어쩌다 오게 되었는지");
-					System.out.println("... 무엇보다 나는 누구인지 알지 못 한다.");
-					System.out.println("앞으로 이곳을 빠져나가 어떻게 해야할지...");
-					System.out.println("너무나 막막했다.");
-					System.out.println();
-					System.out.println("암담함에 아무런 행동없이 무방비한 상태로 있을 때였다.");
-					System.out.println();
-					System.out.println("갑자기 등 뒤에서 인기척이 느껴졌다.");
-					System.out.println("놀라 뒤를 돌아보는 순간...");
-					System.out.println("......");
-					System.out.println("...");
-					System.out.println();
-					
-					Char.getInstance().hpInfo(Char.getInstance().hit(110));
-					
-					run = false;
 					break;
 				case 2:
-					System.out.println("계단을 올라가 다시 복도로 돌아갑니다.");
-					Hallway.getInstance().roomchoice();
-					run = false;
+					System.out.println();
+					System.out.println("하지만... 이내 그 생각은 더이상 멈추었다.");
+					System.out.println("당신은 더이상 움직일 체력도 정신도 남아있지 않다");
+					System.out.println("누군가 자신을 구해주길 바라는 마음으로...");
+					System.out.println("일단 이곳에 남아 사람들을 기다려보기로 한다.");
+					System.out.println();
+					System.out.println();
+					System.out.println("...");
+					System.out.println("......");
+					System.out.println("당신은 저 체온증으로 사망하셨습니다.");
+					System.out.println();
+					new Main(100);
 					break;
-				default:
-				    System.out.println("지하 공간을 더 둘러보았으나 특별한 점은 없습니다.");
-				    break;
+//				default:
+//				    System.out.println("지하 공간을 더 둘러보았으나 특별한 점은 없습니다.");
+//				    break;
 				}}catch (Exception e) {
 					System.out.println(">>>아무 행동도 하지 않았습니다.");
-				
 
 				}//try~catch
 			}

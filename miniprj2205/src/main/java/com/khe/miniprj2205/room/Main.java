@@ -9,42 +9,47 @@ public class Main {
 	
 	public Main() {
 		main();
+		
 		Room1 room1 = new Room1();
 		room1.starttxt1();
 		room1.tip1();
 	//Char user = new Char();
+		Char.init();
 		Char.getInstance().move();
 	}
 	public Main(int hp) {
 		restart();
 	}
+	public Main(String ending) {
+		ending();
+	}
 
 	public void main() {
 
 		System.out.println(
-				"=======================================================================================================================");
+				" =======================================================================================================================");
 		System.out.println();
 		System.out.println(
-				"#######                   #####                                             #######                                   ");
+				" #######                   #####                                             #######                                   ");
 		System.out.println(
-				"   #    #    # ######    #     #  ####  ##### #####   ##    ####  ######    #        ####   ####    ##   #####  ######");
+				"    #    #    # ######    #     #  ####  ##### #####   ##    ####  ######    #        ####   ####    ##   #####  ######");
 		System.out.println(
-				"   #    #    # #         #       #    #   #     #    #  #  #    # #         #       #      #    #  #  #  #    # #      ");
+				"    #    #    # #         #       #    #   #     #    #  #  #    # #         #       #      #    #  #  #  #    # #      ");
 		System.out.println(
-				"   #    ###### #####     #       #    #   #     #   #    # #      #####     #####    ####  #      #    # #    # #####  ");
+				"    #    ###### #####     #       #    #   #     #   #    # #      #####     #####    ####  #      #    # #    # #####  ");
 		System.out.println(
-				"   #    #    # #         #       #    #   #     #   ###### #  ### #         #            # #      ###### #####  #      ");
+				"    #    #    # #         #       #    #   #     #   ###### #  ### #         #            # #      ###### #####  #      ");
 		System.out.println(
-				"   #    #    # #         #     # #    #   #     #   #    # #    # #         #       #    # #    # #    # #      #      ");
+				"    #    #    # #         #     # #    #   #     #   #    # #    # #         #       #    # #    # #    # #      #      ");
 		System.out.println(
-				"   #    #    # ######     #####   ####    #     #   #    #  ####  ######    #######  ####   ####  #    # #      ###### ");
+				"    #    #    # ######     #####   ####    #     #   #    #  ####  ######    #######  ####   ####  #    # #      ###### ");
 		System.out.println();
 		System.out.println(
-				"=======================================================================================================================");
+				" =======================================================================================================================");
 		System.out.println();
-		System.out.println("\t ★===============================================★");
-		System.out.println("\t ≡       1. START       |        2. EXIT         ≡");
-		System.out.println("\t ★===============================================★");
+		System.out.println("\t ====================================================");
+		System.out.println("\t        1. START       |        2. EXIT         ");
+		System.out.println("\t ====================================================");
 		System.out.println();
 		boolean run = true;
 		while (run) {
@@ -75,9 +80,9 @@ public class Main {
 
 	public void restart() {
 		System.out.println();
-		System.out.println("\t ★===============================================★");
-		System.out.println("\t ≡       1. RESTART       |       2. EXIT        ≡");
-		System.out.println("\t ★===============================================★");
+		System.out.println("\t ===============================================");
+		System.out.println("\t          1. RESTART       |       2. EXIT        ");
+		System.out.println("\t ===============================================");
 		System.out.println("");
 		
 		boolean run = true;
@@ -88,6 +93,7 @@ public class Main {
 				switch (choice) {
 				case 1:
 					System.out.println("\t>>> 게임을 다시 시작합니다.");
+					
 					new Main();
 					run = false;
 					System.out.println();
@@ -113,6 +119,19 @@ public class Main {
 	public void turnOff(){
 		System.out.println("\t>>>게임을 종료합니다.");
 		System.exit(0);
+	}
+	
+	public void ending() {
+		System.out.println("\t=================================================");
+		System.out.println("\t #######                  #######               ");
+		System.out.println("\t    #    #    # ######    #       #    # #####  ");
+		System.out.println("\t    #    #    # #         #       ##   # #    # ");
+		System.out.println("\t    #    ###### #####     #####   # #  # #    # ");
+		System.out.println("\t    #    #    # #         #       #  # # #    # ");
+		System.out.println("\t    #    #    # #         #       #   ## #    # ");
+		System.out.println("\t    #    #    # ######    ####### #    # #####  ");
+		System.out.println("\t=================================================");
+		new Main(100);
 	}
 	
 	
